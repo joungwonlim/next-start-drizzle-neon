@@ -34,3 +34,29 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+1. [o] nextjs setup
+2. [o] shadcn setup "pnpm add shadcn@latest"
+3. [o] .vscode, .prettierrc.json
+4. [o] env/server.ts
+   - @t3-oss/env-nextjs
+   - zod
+5. [o] next-config.mjs
+   - jiti
+   - .env
+6. [o] drizzle, neon database setup
+   - drizzle.config.ts
+   - db/schema
+7. [O] folder structure setup
+   - frontend
+     - layout.tsx(\*independent)
+   - backend
+     - layout.tsx(\*independent)
+   - layout.tsx(default)
+8. [o] next-auth setup
+   - app/api/auth/[...nextauth]/route.ts
+   - config/authOptions.ts
+     - userLoginLog
+9. [o] middleware.ts setup
+   - app/api/userTrack/route.ts - userActivityLog - userErrorLog 10.[o]backend setup
+   - data-table setup
