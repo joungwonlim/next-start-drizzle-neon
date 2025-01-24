@@ -24,6 +24,7 @@ export const userErrorLogs = pgTable("user_error_logs", {
   errorAt: timestamp("error_at").defaultNow().notNull(), // Time the error occurred.
   ipAddress: text("ip_address"), // IP address where the error occurred.
   userAgent: text("user_agent"), // User agent string of the user
+  errorLocation: text("error_location"), // Error location
   createdAt: timestamp("created_at").defaultNow(), // Record created time
   updatedAt: timestamp("updated_at")
     .defaultNow()

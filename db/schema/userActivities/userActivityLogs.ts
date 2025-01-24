@@ -2,6 +2,7 @@
 // This file defines the schema for the 'user_activity_logs' table.
 // It tracks user activities and their details.
 import {
+  jsonb,
   pgTable,
   text,
   timestamp,
@@ -22,12 +23,9 @@ export const userActivityLogs = pgTable(
     userId: text("user_id") // User ID column, references the users table, and cascades on delete.
       .notNull()
       .references(() => users.id, { onDelete: "cascade" }),
-    activity: text("activity").notNull(), // User activity description
-    activityAt: timestamp("activity_at")
-      .defaultNow()
-      .notNull(), // Timestamp of the activity.
-    ipAddress: text("ip_address"), // IP address where the activity occurred.
-    userAgent: text("user_agent"), // User agent string of the user
+    path: text("path").notNull(), // Path column
+    action: text("action").notNull(), // Action column
+    metadata: jsonb("metadata"), // Metadata column
     createdAt: timestamp("created_at").defaultNow(), // Record created time
     updatedAt: timestamp("updated_at")
       .defaultNow()
